@@ -32,6 +32,7 @@
                 text="tohttp"
                 description="Convert http request.">
             <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift T"/>
         </action>
     </actions>
 
