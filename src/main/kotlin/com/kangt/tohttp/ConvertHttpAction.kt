@@ -62,10 +62,10 @@ class ConvertHttpAction : AnAction() {
             val idx = header.indexOf(":")
             if (idx > 0 && idx < header.length - 1) {
                 val key = header.substring(0, idx).trim { it <= ' ' }
-                if ("Authorization" == key || "Content-Type" == key) {
+//                if ("Authorization" == key || "Content-Type" == key) {
                     val value = header.substring(idx + 1).trim { it <= ' ' }
                     headers.add(key + ": " + value)
-                }
+//                }
             }
         }
 
