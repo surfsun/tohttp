@@ -42,7 +42,7 @@ class ConvertHttpAction : AnAction() {
      */
     private fun convertCurlToHttpRequest(curl: String): String {
         // 1. 判断请求方法
-        val isPost = curl.contains("--data") || curl.contains("--data-raw") || curl.contains("-d")
+        val isPost = curl.contains("--data") || curl.contains("--data-raw")
         val method = if (isPost) "POST" else "GET"
 
 
