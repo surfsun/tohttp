@@ -62,17 +62,23 @@ class ConvertHttpAction : AnAction() {
             val idx = header.indexOf(":")
             if (idx > 0 && idx < header.length - 1) {
                 val key = header.substring(0, idx).trim { it <= ' ' }
-//                if ("Authorization" == key || "Content-Type" == key) {
                     val value = header.substring(idx + 1).trim { it <= ' ' }
                     headers.add(key + ": " + value)
-//                }
             }
         }
+
+        //  解析 -b Cookie（支持单引号、双引号或无引号）
+        val cookiePattern = Pattern.compile("-b\\s+(['\"])(.*?)\\1", Pattern.DOTALL)
+        val cookieMatcher = cookiePattern.matcher(curl)
+        if (cookieMatcher.find()) {
+            val cookieValue = cookieMatcher.group(2) // 实际 cookie 字符串
+            headers.add("Cookie: $cookieValue")
+        }
+
 
 
         // 4. 解析 Body
         val dataPattern = Pattern.compile("(--data-raw|--data|-d)\\s+(?:'([^']*)'|\"([^\"]*)\"|([^\\s]+))")
-
         val dataMatcher = dataPattern.matcher(curl)
         var body = ""
         if (dataMatcher.find()) {
