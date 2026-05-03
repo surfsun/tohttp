@@ -13,9 +13,17 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-          English:Select curl command content -> Right-click mouse -> Click tohttp -> Convert curl command to HTTP plugin code
-          中文：选择需要转换的curl代码内容 -> 点击鼠标右键 -> 点击tohtt按钮 -> 选择内容会被替换成http插件，即可直接在idea的http文件里直接调用
-  ]]></description>
+        English:
+        Convert cURL commands to IntelliJ IDEA HTTP Client format with one click.
+        Usage: Select a cURL command -> Right-click -> Choose "tohttp" -> The selected content will be replaced with executable HTTP request code.
+        Shortcut: Ctrl + Shift + T
+
+        中文：
+        一键将 cURL 命令转换为 IntelliJ IDEA HTTP Client 格式。
+        使用方式：选中 cURL 命令 -> 右键点击 -> 选择“tohttp” -> 自动替换为可直接运行的 HTTP 请求代码。
+        快捷键：Ctrl + Shift + T
+        ]]>
+    </description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
